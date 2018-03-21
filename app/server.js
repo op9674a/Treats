@@ -12,6 +12,17 @@ app.use(session({
 }))
 app.use(express.urlencoded({extended:false}));
 
+// treats controller
+const treatsController = require("./controllers/treats.js");
+app.use("/treats", treatsController);
+
+// users controller
+
+// sessions controller
+
+// places controller
+
+//index
 app.get("/", (req, res)  =>  {
   res.send("hi");
 })
