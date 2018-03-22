@@ -29,8 +29,6 @@ const placesController = require("./controllers/places.js");
 app.use("/treats/:id/places", placesController);
 
 
-
-
 //index
 app.get('/treats', (req, res)=>{
 
@@ -42,14 +40,15 @@ app.get('/treats', (req, res)=>{
 });
 
 
-
-
-mongoose.connect('mongodb://localhost:27017/treats');
+const mongoURI = process.env.MONGODB_URI || "mongodb://localhost:27017/treats";
+mongoose.connect(mongoURI);
 
 mongoose.connection.once('open', ()=>{
     console.log('connected to mongo');
 })
 
-app.listen(3000, ()=>{
+const port = process.env.PORT || 3000;
+
+app.listen(port, ()=>{
     console.log('listening');
 });
