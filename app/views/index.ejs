@@ -23,13 +23,18 @@
     </nav>
 
     <!-- customize to username -->
-    <h1>Welcome <%=currentUser.username%></h1>
+    <h1> <% if(currentUser) { %>
+         Welcome <%=currentUser.username%>!
+         <%} else {%>
+           Welcome!
+         <% } %>
+         </h1>
     <h3>Here are some treats</h3>
 
     <!-- treats for loop ul li with link to show pages-->
 
     <!-- if user is me, edit, create, delete links -->
-
+  
 
 
   </body>
