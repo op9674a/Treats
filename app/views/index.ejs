@@ -11,16 +11,26 @@
     <h3>App Description</h3>
     <nav>
       <!-- Link to users/new -->
-      <a href="#">Register</a>
+      <a href="/users/new">Register</a>
       <!-- Link to sessions/new -->
-      <a href="#">Log In</a>
+      <a href="/sessions/new">Log In</a>
+      <!-- logout -->
+      <% if(currentUser) { %>
+           <form action="sessions?_method=DELETE" method="POST">
+             <input type="submit" name="" value="Logout">
+           </form>
+         <% } %>
     </nav>
 
     <!-- customize to username -->
-    <h1>Welcome</h1>
+    <h1>Welcome <%=currentUser.username%></h1>
     <h3>Here are some treats</h3>
 
     <!-- treats for loop ul li with link to show pages-->
+
+    <!-- if user is me, edit, create, delete links -->
+
+
 
   </body>
 </html>

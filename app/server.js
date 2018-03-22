@@ -12,20 +12,34 @@ app.use(session({
 }))
 app.use(express.urlencoded({extended:false}));
 
+// users controller
+const usersController = require("./controllers/users.js");
+app.use("/users", usersController);
+
+// sessions controller
+const sessionsController = require('./controllers/sessions.js');
+app.use("/sessions", sessionsController);
+
 // treats controller
 const treatsController = require("./controllers/treats.js");
 app.use("/treats", treatsController);
 
-// users controller
-
-// sessions controller
-
 // places controller
+const placesController = require("./controllers/places.js");
+app.use("/treats/:id/places", placesController);
+
+
+
 
 //index
-app.get("/", (req, res)  =>  {
-  res.send("hi");
-})
+app.get('/treats', (req, res)=>{
+
+    res.render('index.ejs', {
+        currentUser: req.session.currentUser
+        // currentUsername: req.session.currentUser.username
+    });
+      console.log(req.session.currentUser.username);
+});
 
 
 
