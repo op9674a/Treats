@@ -31,12 +31,9 @@ app.use("/treats/:id/places", placesController);
 
 //index
 app.get('/treats', (req, res)=>{
-
     res.render('index.ejs', {
         currentUser: req.session.currentUser
-        // currentUsername: req.session.currentUser.username
-    });
-      console.log(req.session.currentUser.username);
+});
 });
 
 
@@ -49,6 +46,6 @@ mongoose.connection.once('open', ()=>{
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log('listening');
 });

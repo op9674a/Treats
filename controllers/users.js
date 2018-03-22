@@ -7,10 +7,10 @@ router.get('/new', (req, res)=>{
     res.render("users/new.ejs");
 });
 
-router.post('/users', (req, res)=>{
+router.post("/", (req, res)=>{
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (error, createdUser)=>{
-        res.redirect('/users')
+        res.redirect("/users")
     })
 });
 
