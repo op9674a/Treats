@@ -8,7 +8,7 @@ module.exports = router;
 router.get("/:id", (req, res) => {
   res.render("places/show.ejs");
   // Places.findById(req.params.id, (err, showPlace) => {
-  //     res.render("placess/show.ejs", {
+  //     res.render("places/show.ejs", {
   //       places: showPlace
     })
   // })

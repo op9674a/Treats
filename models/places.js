@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const placeSchema = Schema({
-image: String,
+image: [String],
 name: String,
 description: String,
 address: String,
-map: String,
+map: String
 })
 
 const Places = mongoose.model("Places", placeSchema);

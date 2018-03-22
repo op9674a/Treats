@@ -32,9 +32,15 @@
     <h3>Here are some treats</h3>
 
     <!-- treats for loop ul li with link to show pages-->
-
+    <ul>
+       <% for (let i=0; i< treats.length; i++){ %>
+         <li>
+           <a href="/treats/<%=treats[i].id; %>"><%=treats[i].name%></a>
+         </li>
+       <% } %>
+     </ul>
     <!-- if user is me, edit, create, delete links -->
-  
+
 
 
   </body>
