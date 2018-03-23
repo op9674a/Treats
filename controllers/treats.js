@@ -11,6 +11,22 @@ router.get("/seedTreats", (req, res) =>{
   res.redirect("/treats");
 })
 })
+
+//create new treat
+//new page inputs
+//redirect to main
+router.get("/new", (req, res)=>{
+  res.render("new.ejs");
+  res.redirect("/treats");
+})
+
+//post created from new to main
+router.post("/", (req, res) => {
+  Treats.create(req.body, (err, addNewTreat)=>{
+    res.redirect("/treats");
+  })
+});
+
 //index of treats
 router.get("/", (req, res) => {
   // res.send("index page");
@@ -30,6 +46,7 @@ router.get("/:id", (req, res) => {
   Treats.findById(req.params.id, (err, showTreat) => {
       res.render("treats/show.ejs", {
         treats: showTreat,
+        currentUser: req.session.currentUser
       })
     })
   });
@@ -45,7 +62,20 @@ router.get("/:id/places", (req, res)=>{
     })
   });
 
-  
+//edit treat show page
+router.get("/:id/edit", (req, res) => {
+  res.send("edit treat show page");
+})
 
+
+
+router.put("/:id", (req, res)=>{
+  console.log(req.body);
+})
+
+router.delete("/", (req, res) => {
+  Treats.splice(req.params.index, 1);
+  res.redirect("/");
+})
 
 module.exports = router;

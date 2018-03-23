@@ -7,6 +7,19 @@
   <body>
     <h1>App Name TBD</h1>
     <h3>App Description</h3>
+    <!-- Link to users/new -->
+    <a href="/users/new">Register</a>
+    <!-- Link to sessions/new -->
+    <a href="/sessions/new">Log In</a>
+    <!-- main page -->
+    <a href="/treats">Back to Treats</a>
+    <!-- logout -->
+    <% if(currentUser) { %>
+         <form action="sessions?_method=DELETE" method="POST">
+           <input type="submit" name="" value="Logout">
+         </form>
+       <% } %>
+  </nav>
 
 
     <h1><%=treats.name%></h1>
@@ -21,6 +34,8 @@
          </li>
        <% } %>
      </ul>
+
+     <a href="/treats/new">Add a new Treat</a>
 
 
 
