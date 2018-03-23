@@ -17,5 +17,6 @@ locations: [locationSchema]
 })
 
 const Treats = mongoose.model("Treats", treatSchema);
+const Locations = mongoose.model("Locations", locationSchema);
 
 module.exports = Treats;

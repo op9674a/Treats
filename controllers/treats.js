@@ -53,7 +53,7 @@ router.get("/:id", (req, res) => {
     })
   });
 
-//show all places
+//show all places for treat
 //go to treats/:id/places
 //link to real pages
 //link to edit
