@@ -8,7 +8,21 @@
     <h1>App Name TBD</h1>
     <h3>App Description</h3>
 
+
     <h1><%=treats.name%></h1>
+    <img src="<%=treats.image; %>"><br>
+    Description: <%=treats.description%>
+
+
+    <ul>
+       <% for (let i=0; i< treats.places.length; i++){ %>
+         <li>
+           <a href="#"><%=treats.places[i]%></a>
+         </li>
+       <% } %>
+     </ul>
+
+
 
 
   </body>
