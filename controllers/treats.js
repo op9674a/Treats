@@ -25,7 +25,6 @@ router.get("/", (req, res) => {
 //show treat
 //go to to treats/:id
 //show treat req.params.id
-
 router.get("/:id", (req, res) => {
   // res.render("treats/show.ejs");
   Treats.findById(req.params.id, (err, showTreat) => {
@@ -34,5 +33,19 @@ router.get("/:id", (req, res) => {
       })
     })
   });
+
+//show place
+//go to treats/:id/places/:id"
+//show places req.params.id
+router.get("/:id/places", (req, res)=>{
+  Treats.places.findById(req.params.id, (err, showPlace) => {
+    res.redirect("treats.places[i]", {
+      // places:showPlace,
+      })
+    })
+  });
+
+  
+
 
 module.exports = router;
