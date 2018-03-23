@@ -3,6 +3,8 @@ const router = express.Router();
 const seed = require("../models/seedtreats.js")
 const Treats = require('../models/treats.js');
 const User = require('../models/users.js');
+const bcrypt = require('bcrypt');
+
 
 //SEED ROUTE
 router.get("/seedTreats", (req, res) =>{

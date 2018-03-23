@@ -27,8 +27,8 @@ app.use("/users", usersController);
 const sessionsController = require("./controllers/sessions.js");
 app.use("/sessions", sessionsController);
 //places controller
-const placesController=require("./controllers/places.js")
-app.use("/place", placesController);
+const locationsController = require("./controllers/locations.js")
+app.use("/place", locationsController);
 
 //show place
 //go to treats/place/:id
