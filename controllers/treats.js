@@ -16,7 +16,7 @@ router.get("/seedTreats", (req, res) =>{
 //new page inputs
 //redirect to main
 router.get("/new", (req, res)=>{
-  res.render("new.ejs");
+  res.render("treats/new.ejs");
   res.redirect("/treats");
 })
 
@@ -52,8 +52,10 @@ router.get("/:id", (req, res) => {
   });
 
 //show place
-//go to treats/:id/places/:id"
-//show places req.params.id
+//go to treats/:id/places
+//link to real pages
+//link to edit
+//leave messages
 router.get("/:id/places", (req, res)=>{
   Treats.places.findById(req.params.id, (err, showPlace) => {
     res.redirect("treats.places[i]", {
@@ -64,18 +66,25 @@ router.get("/:id/places", (req, res)=>{
 
 //edit treat show page
 router.get("/:id/edit", (req, res) => {
-  res.send("edit treat show page");
+  Treats.findById(req.params.id, (err, editTreat)=>{
+    res.render("treats/edit.ejs", {
+      treats: editTreat
+    });
+  })
 })
 
-
-
+//put to treat show page from edit
 router.put("/:id", (req, res)=>{
-  console.log(req.body);
-})
+  Treats.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=> {
+     res.redirect("/treats/" + req.params.id);
+   })
+ })
 
-router.delete("/", (req, res) => {
-  Treats.splice(req.params.index, 1);
-  res.redirect("/");
-})
+router.delete("/:id", (req, res) => {
+  Treats.findByIdAndRemove (req.params.id, (err, deleteTreat)  => {
+   res.redirect("/treats");
+   })
+ });
+
 
 module.exports = router;

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/treats/<%=treats.id%>?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value="<%=treats.name%>"><br>
+      Image: <input type="text" name="image" value="<%=treats.image%>"><br>
+      Description: <input type="text" name="description" value="<%=treats.description%>"><br>
+      Places: <input type="text" name="places" value="<%=treats.places%>"><br>
+
+      <input type="submit" name="" value="Submit Treat Edits">
+    </form>
+  </body>
+</html>
