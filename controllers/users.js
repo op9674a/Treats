@@ -8,11 +8,11 @@ router.get('/new', (req, res) => {
   res.render('users/new.ejs');
 });
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
   res.render("users/index.ejs");
   User.create(req.body, (err, createdUser) => {
-    res.redirect('/treats');
+    res.redirect("/treats");
   });
 });
 

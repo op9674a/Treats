@@ -17,22 +17,15 @@ app.use(session({
     saveUninitialized: false
 }))
 
-// users controller
-const usersController = require("./controllers/users.js");
-app.use("/users", usersController);
-
 // treats controller
 const treatsController = require("./controllers/treats.js");
 app.use("/treats", treatsController);
-
+// users controller
+const usersController = require("./controllers/users.js");
+app.use("/users", usersController);
 // sessions controller
 const sessionsController = require("./controllers/sessions.js");
 app.use("/sessions", sessionsController);
-
-// places controller
-const placesController = require("./controllers/places.js");
-app.use("/treats/:id/places", placesController);
-
 
 const mongoURI = process.env.MONGODB_URI || "mongodb://localhost:27017/treats";
 mongoose.connect(mongoURI);
