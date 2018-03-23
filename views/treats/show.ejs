@@ -31,9 +31,11 @@
        <% for (let i=0; i< treats.places.length; i++){ %>
          <li>
            <a href="<%=treats.places[i]%>"><%=treats.places[i]%></a>
-         </li>
+           <li><a href="/place/<%=treats.places.id%>">View more about this place</a></li>
        <% } %>
      </ul>
+
+
 
      <a href="/treats/<%=treats.id%>/edit">Edit this treat</a>
 

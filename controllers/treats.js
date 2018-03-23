@@ -51,16 +51,14 @@ router.get("/:id", (req, res) => {
     })
   });
 
-//show place
+//show all places
 //go to treats/:id/places
 //link to real pages
 //link to edit
 //leave messages
 router.get("/:id/places", (req, res)=>{
-  Treats.places.findById(req.params.id, (err, showPlace) => {
-    res.redirect("treats.places[i]", {
-      // places:showPlace,
-      })
+  Treats.places.findById(req.params.id, (err, showPlaces) => {
+    res.redirect("treats.places[i]");
     })
   });
 
@@ -80,6 +78,7 @@ router.put("/:id", (req, res)=>{
    })
  })
 
+//delete treat
 router.delete("/:id", (req, res) => {
   Treats.findByIdAndRemove (req.params.id, (err, deleteTreat)  => {
    res.redirect("/treats");
