@@ -36,8 +36,13 @@
      <ul>
 
 <%for (let i=0; i< treats.locations.length; i++){%>
-<li><a href="/place/show/<%=treats.locations[i].id;%>">View more about <%=treats.locations[i].name%></a></li>
+<li><a href="/treats/<%=treats.id%>/locations/<%=treats.locations[i].id;%>">View more about <%=treats.locations[i].name%></a></li>
+  <%=treats.locations[i].description%>
   <%}%>
+
+
+
+
 
 
 

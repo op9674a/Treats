@@ -4,6 +4,8 @@ const seed = require("../models/seedtreats.js")
 const Treats = require('../models/treats.js');
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
+const Locations = require("../models/locations.js")
+const url = require("url-parse");
 
 
 //SEED ROUTE
@@ -72,6 +74,21 @@ router.get("/:id/edit", (req, res) => {
     });
   })
 })
+
+//show location page
+router.get("/:treatid/locations/:locationid", (req, res) => {
+  console.log(req.params);
+  Treats.findById(req.params.treatid, (err, showTreat) => {
+    let result = showTreat.locations.filter((elem, i) => {
+      return elem.id === req.params.locationid
+    })
+    console.log(result);
+      res.render("locations/show.ejs", {
+      treats:showTreat,
+      locations: result[0]
+  })
+  })
+});
 
 //put to treat show page from edit
 router.put("/:id", (req, res)=>{

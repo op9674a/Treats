@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Locations = require("./locations.js")
 
 const locationSchema = new Schema({
   image: String,
   name: String,
   description: String,
-  map:String,
+  map: String
 })
 
 const treatSchema = new Schema({
@@ -17,6 +18,5 @@ locations: [locationSchema]
 })
 
 const Treats = mongoose.model("Treats", treatSchema);
-const Locations = mongoose.model("Locations", locationSchema);
 
 module.exports = Treats;
