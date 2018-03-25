@@ -17,6 +17,9 @@ app.use(session({
     saveUninitialized: false
 }))
 
+app.get("/", (req, res) => {
+  res.send("hello")
+})
 // treats controller
 const treatsController = require("./controllers/treats.js");
 app.use("/treats", treatsController);
