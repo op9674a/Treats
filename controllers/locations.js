@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const seed = require("../models/seedtreats.js")
 const Treats = require('../models/treats.js');
-const User = require('../models/users.js');
+const Users = require('../models/users.js');
 const bcrypt = require('bcrypt');
 const Locations = require('../models/locations.js');
 

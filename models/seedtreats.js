@@ -12,16 +12,22 @@ let seedTreats = [
     image: "https://media-cdn.tripadvisor.com/media/photo-s/02/d8/b5/fe/waiola-shave-ice-and.jpg",
     name:"Waiola Shave Ice",
     description:"To straighten things up, they serve “shave ice” or shaved ice.  These are not “snow cones” with crunchy pebbles of ice, swimming in some neon artificial liquid.  These are cones of ice as fine as cotton, artfully shaven off a block, and then syruped with a choice of tropical flavors. After eating shave ice, snow cones are guaranteed to have no appeal.",
+    map:"https://www.google.com/maps/d/embed?mid=1ER2CPf8YkTtbKD7mNfyt5gE2m1Iq5ETJ",
+
   },
     {
       image: "https://www.hawaiimagazine.com/sites/default/files/field/image/Matsumotos2%20copy.jpg",
       name:"Matsumoto's Shave Ice",
       description:"Established: February 13, 1951",
+      map:"https://www.google.com/maps/d/embed?mid=1DioLTjoeTAXRsBN1ouxNvix2I8Hx7hpq"
+
     },
     {
       image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg1T_VfFti9l82symX0Is6oA65rHOg3vjrnnZI5toD7iw5_GNFJg",
       name: "Uncle Clay's House of Pure Aloha",
       description:"ALL NATURAL, HOMEMADE, REAL--A TASTE OF PURE ALOHA IN A BOWL.",
+      map:"https://www.google.com/maps/d/embed?mid=1DioLTjoeTAXRsBN1ouxNvix2I8Hx7hpq"
+
     }],
   },
 {
@@ -37,19 +43,19 @@ let seedTreats = [
     image: "https://7elevenhawaii.com/wp-content/uploads/2016/04/logo_block_email.png",
     name:"7-Eleven Hawaii",
     description:"7-eleven",
-    map:"https://www.google.com/maps?q=7+eleven+hawaii&rlz=1C5CHFA_enUS503US503&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjSt9esyYPaAhVV22MKHdL-DgYQ_AUICigB"
+    map:"https://www.google.com/maps/d/embed?mid=1rpevI83Fx9PBYUWOZI6tKqvYZGX_WfFm"
   },
     {
       image: "http://archives.starbulletin.com/2008/08/31/features/arteater3.jpg",
       name:"Mana Bu's",
       description:"As produced by Mana Bu's, Hawaii's Musubi HQ﻿",
-      map:"https://www.google.com/maps?q=hawaiimusubi&rlz=1C5CHFA_enUS503US503&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjr35jIyYPaAhVF-2MKHS2QDXYQ_AUICigB"
+      map:"https://www.google.com/maps/d/embed?mid=1q-pQPtyAYYI1mGMHY0RjAynND9vhGqU0"
     },
     {
       image:"http://www.tonsuke.com/jvw02.jpg",
       name: "Tonsuke Corporation Iyasume Cafe",
       description:"Iyasume was opened in Waikiki at September 2000.",
-      map:"https://www.google.com/maps?q=http://tonsuke.com/eomusubiya.html&rlz=1C5CHFA_enUS503US503&biw=1561&bih=908&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjvwrSWyoPaAhXKilQKHW2eBrsQ_AUIDSgE"
+      map:"https://www.google.com/maps/d/embed?mid=1AN29GGfyZShgTvvyY9oQps8O8dT18eZ7"
     }]
 },
 
@@ -66,20 +72,22 @@ let seedTreats = [
     image: "http://www.dinersdriveinsdiveslocations.com/fresh-catch-hawaii.jpg",
     name:"Fresh Catch",
     description:"Fresh catch Hawaii best and freshest seafood in the world we catch and kill from the mountain to the sea",
-    map:"https://www.google.com/maps/place/Fresh+Catch/@21.352611,-157.8759835,12z/data=!4m8!1m2!2m1!1sfresh+catch+808!3m4!1s0x7c006d82b26a5957:0x413d965ebd249afc!8m2!3d21.2881074!4d-157.8100246"
+    map:"https://www.google.com/maps/d/embed?mid=1gmNmk7U0x7IyIbehSTY7OKjYwzFKOqNm"
+
   },
     {
       image: "https://pbs.twimg.com/profile_images/378800000837835403/727404fbb0018fc8889959d17f813671_400x400.jpeg",
       name:"Tamura's Fine Wine and Liquors",
-      description:"n 1995, Tamura Enterprises, Inc. was formed, operating a liquor division and grocery store.",
-      map:"3496 Waialae Ave, Honolulu, HI 96816"
+      description:"In 1995, Tamura Enterprises, Inc. was formed, operating a liquor division and grocery store.",
+      map:"https://www.google.com/maps/d/embed?mid=1u37SiZsAXak6l8XHGwVeP30l__sB6sjX"
+
     },
     {
       image:"http://www.best-of-oahu.com/images/Da-Hawaiian-Poke-Co.jpg",
       name: "Da Hawaiian Poke Company",
       description:"We use only the best regional ingredients: line-caught ahi straight from the water, crunchy limu (seaweed), freshly-made tofu, and vegetables grown and harvested by local farmers. With these simple ingredients, Da Hawaiian Poke Co. turns a humble bowl of poke into a visually stimulating and delicious dining experience.",
-      map:"https://www.google.com/maps?rlz=1C5CHFA_enUS503US503&biw=1561&bih=908&q=da+hawaiian+poke+company&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjs28OJzIPaAhXGLmMKHY0nCMQQ_AUICigB"
-    }]
+      map:"https://www.google.com/maps/d/embed?mid=1qth0lJUulJ634G7KMg5Nsogj-fkoXEGs"
+  }]
  }
 ];
 

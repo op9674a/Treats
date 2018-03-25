@@ -19,9 +19,36 @@
 
     </nav>
 
+
     <%=locations.name%>
     <img src="<%=locations.image%>" alt="">
     <%=locations.description%>
 
+<% if(currentUser) { %>
+  <h1>Tried it? What did you think?</h1>
+  <form action="/:treatid/locations/:locationid>" method="POST">
+    <textarea name="message" placeholder="TYPE YOUR MESSAGE HERE..."></textarea>
+        <input type="submit" value="POST">
+      </form>
+      <h1>the message board</h1>
+                    <div class="main-message">
+
+
+                    </div>
+            </div>
+
+         <%} else {%>
+           Register to let everyone know what you think!
+         <% } %>
+
+
+
+    <iframe id ="map" src="" width="640" height="480"></iframe>
+
   </body>
+  <script>
+  let map = <%- JSON.stringify(locations.map)%>
+  let id = document.getElementById("map")
+  id.src = map
+  </script>
 </html>

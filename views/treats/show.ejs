@@ -21,7 +21,7 @@
        <% } %>
   </nav>
 
-
+  
     <h1><%=treats.name%></h1>
     <img src="<%=treats.image; %>"><br>
     Description: <%=treats.description%>
@@ -39,6 +39,7 @@
 <li><a href="/treats/<%=treats.id%>/locations/<%=treats.locations[i].id;%>">View more about <%=treats.locations[i].name%></a></li>
   <%=treats.locations[i].description%>
   <%}%>
+
 
 
 

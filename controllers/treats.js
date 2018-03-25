@@ -6,6 +6,7 @@ const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 const Locations = require("../models/locations.js")
 const url = require("url-parse");
+const storage = require("node-localstorage");
 
 
 //SEED ROUTE
@@ -22,6 +23,7 @@ router.get("/seedTreats", (req, res) =>{
 router.get("/new", (req, res)=>{
   res.render("treats/new.ejs");
   res.redirect("/treats");
+  currentUser: req.session.currentUser
 })
 
 //post created from new to main
@@ -56,13 +58,11 @@ router.get("/:id", (req, res) => {
   });
 
 //show all places for treat
-//go to treats/:id/places
-//link to real pages
-//link to edit
 //leave messages
 router.get("/:id/places", (req, res)=>{
   Treats.places.findById(req.params.id, (err, showPlaces) => {
     res.redirect("treats.places[i]");
+    currentUser: req.session.currentUser
     })
   });
 
@@ -70,12 +70,21 @@ router.get("/:id/places", (req, res)=>{
 router.get("/:id/edit", (req, res) => {
   Treats.findById(req.params.id, (err, editTreat)=>{
     res.render("treats/edit.ejs", {
-      treats: editTreat
+      treats: editTreat,
+      currentUser: req.session.currentUser
     });
   })
 })
 
 //show location page
+//need to name ids differently so they don't conflict
+//req.params is a whole object
+//find treat id with req.params.treatid
+//find location id with req.params.locationid
+//show locations matching treat id
+//showTreat.locations is an array, iterate and find matching location id
+//result is an array
+//declare locations
 router.get("/:treatid/locations/:locationid", (req, res) => {
   console.log(req.params);
   Treats.findById(req.params.treatid, (err, showTreat) => {
@@ -85,11 +94,24 @@ router.get("/:treatid/locations/:locationid", (req, res) => {
     console.log(result);
       res.render("locations/show.ejs", {
       treats:showTreat,
-      locations: result[0]
+      locations: result[0],
+      currentUser: req.session.currentUser
   })
   })
 });
 
+// post messages to "/:treatid/locations/:locationid"
+router.post("/:treatid/locations/:locationid", (req, res) => {
+  User.findOneAndUpdate({_id:req.session.currentUser._id},
+    { $push: {messages: req.body.message, treats: req.params.treatid, locations: req.params.locationid}},
+    (err, foundUser) => {
+      res.redirect("/treats/:treatid/locations/:locationid", {
+        treats:showTreat,
+        locations: result[0],
+        users: {_id:req.session.currentUser._id}
+      })
+    })
+});
 //put to treat show page from edit
 router.put("/:id", (req, res)=>{
   Treats.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=> {
