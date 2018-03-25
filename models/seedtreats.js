@@ -72,7 +72,7 @@ let seedTreats = [
     image: "http://www.dinersdriveinsdiveslocations.com/fresh-catch-hawaii.jpg",
     name:"Fresh Catch",
     description:"Fresh catch Hawaii best and freshest seafood in the world we catch and kill from the mountain to the sea",
-    map:"https://www.google.com/maps/d/embed?mid=1gmNmk7U0x7IyIbehSTY7OKjYwzFKOqNm"
+    map:"https://www.google.com/maps/d/u/0/embed?mid=1gmNmk7U0x7IyIbehSTY7OKjYwzFKOqNm"
 
   },
     {

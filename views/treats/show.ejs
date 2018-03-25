@@ -3,25 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
-    <h1>App Name TBD</h1>
+    <h1>SnackMap</h1>
     <h3>App Description</h3>
-    <!-- Link to users/new -->
-    <a href="/users/new">Register</a>
-    <!-- Link to sessions/new -->
-    <a href="/sessions/new">Log In</a>
-    <!-- main page -->
-    <a href="/treats">Back to Treats</a>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Treats</a></li>
+      </ol>
+    </nav>
+
     <!-- logout -->
     <% if(currentUser) { %>
-         <form action="sessions?_method=DELETE" method="POST">
+         <form action="treats?_method=DELETE" method="POST">
            <input type="submit" name="" value="Logout">
          </form>
        <% } %>
   </nav>
 
-  
+
     <h1><%=treats.name%></h1>
     <img src="<%=treats.image; %>"><br>
     Description: <%=treats.description%>
@@ -37,23 +41,16 @@
 
 <%for (let i=0; i< treats.locations.length; i++){%>
 <li><a href="/treats/<%=treats.id%>/locations/<%=treats.locations[i].id;%>">View more about <%=treats.locations[i].name%></a></li>
-  <%=treats.locations[i].description%>
   <%}%>
 
-
-
-
-
-
-
-
+  <% if(currentUser) { %>
      <a href="/treats/<%=treats.id%>/edit">Edit this treat</a>
 
      <form action ="/treats/<%=treats.id; %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete this Treat">
     </form>
     <a href="/treats/new">Add a new Treat</a>
-
+ <% } %>
 
 
   </body>

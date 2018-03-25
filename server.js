@@ -26,21 +26,6 @@ app.use("/users", usersController);
 // sessions controller
 const sessionsController = require("./controllers/sessions.js");
 app.use("/sessions", sessionsController);
-//places controller
-const locationsController = require("./controllers/locations.js")
-app.use("/place", locationsController);
-
-//show place
-//go to treats/place/:id
-// app.get("/place", (req, res)=>{
-//   res.send("place show page")
-  // Treats.places.findById(req.params.id, (err, showPlace) =>{
-  //   res.render("places/show.ejs", {
-  //     places: showPlace,
-  //     currentUser: req.session.currentUser
-  //   })
-  // })
-// })
 
 
 const mongoURI = process.env.MONGODB_URI || "mongodb://localhost:27017/treats";

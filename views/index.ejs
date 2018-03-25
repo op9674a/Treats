@@ -3,17 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
 
     <!-- App Name -->
     <h1>App Name TBD</h1>
     <h3>App Description</h3>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
+  </ol>
+</nav>
     <nav>
-      <!-- Link to users/new -->
-      <a href="/users/new">Register</a>
-      <!-- Link to sessions/new -->
-      <a href="/sessions/new">Log In</a>
+  
       <!-- logout -->
       <% if(currentUser) { %>
            <form action="sessions?_method=DELETE" method="POST">

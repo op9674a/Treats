@@ -3,22 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
-    <h1>App Name TBD</h1>
+    <h1>Snack Map</h1>
     <h3>App Description</h3>
-    <h1>Location Show Page</h1>
-    <nav>
-      <!-- bootstrap breadcrumb -->
-      <!-- create new user link-->
-      <a href="/users/new">Register</a>
-      <!-- log in link-->
-      <a href="/sessions/new">Log In</a>
-      <!-- log out link if logged in-->
-      <a href="/treats">Back to Snacks</a>
 
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Treats</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/treats/<%=treats.id%>">Back to Other Locations</a></li>
+      </ol>
+    </nav>
+    <nav>
+
+      <!-- logout -->
+      <% if(currentUser) { %>
+           <form action="/treats/<%=treats.id%>/locations/<%=locations.id%>?_method=DELETE" method="POST">
+             <input type="submit" name="" value="Logout">
+           </form>
+         <% } %>
     </nav>
 
+    <h1>You can get <%=treats.name%> here!</h1>
 
     <%=locations.name%>
     <img src="<%=locations.image%>" alt="">
@@ -26,17 +36,10 @@
 
 <% if(currentUser) { %>
   <h1>Tried it? What did you think?</h1>
-  <form action="/:treatid/locations/:locationid>" method="POST">
+  <form action="/treats/<%=treats.id%>/locations/<%=locations.id%>" method="POST">
     <textarea name="message" placeholder="TYPE YOUR MESSAGE HERE..."></textarea>
         <input type="submit" value="POST">
       </form>
-      <h1>the message board</h1>
-                    <div class="main-message">
-
-
-                    </div>
-            </div>
-
          <%} else {%>
            Register to let everyone know what you think!
          <% } %>

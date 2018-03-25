@@ -6,7 +6,7 @@ const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 const Locations = require("../models/locations.js")
 const url = require("url-parse");
-const storage = require("node-localstorage");
+const methodOverride = require('method-override');
 
 
 //SEED ROUTE
@@ -30,6 +30,7 @@ router.get("/new", (req, res)=>{
 router.post("/", (req, res) => {
   Treats.create(req.body, (err, addNewTreat)=>{
     res.redirect("/treats");
+    currentUser: req.session.currentUser
   })
 });
 
@@ -48,21 +49,11 @@ router.get("/", (req, res) => {
 //go to to treats/:id
 //show treat req.params.id
 router.get("/:id", (req, res) => {
-  // res.render("treats/show.ejs");
   Treats.findById(req.params.id, (err, showTreat) => {
       res.render("treats/show.ejs", {
         treats: showTreat,
         currentUser: req.session.currentUser
       })
-    })
-  });
-
-//show all places for treat
-//leave messages
-router.get("/:id/places", (req, res)=>{
-  Treats.places.findById(req.params.id, (err, showPlaces) => {
-    res.redirect("treats.places[i]");
-    currentUser: req.session.currentUser
     })
   });
 
@@ -100,19 +91,8 @@ router.get("/:treatid/locations/:locationid", (req, res) => {
   })
 });
 
-// post messages to "/:treatid/locations/:locationid"
-router.post("/:treatid/locations/:locationid", (req, res) => {
-  User.findOneAndUpdate({_id:req.session.currentUser._id},
-    { $push: {messages: req.body.message, treats: req.params.treatid, locations: req.params.locationid}},
-    (err, foundUser) => {
-      res.redirect("/treats/:treatid/locations/:locationid", {
-        treats:showTreat,
-        locations: result[0],
-        users: {_id:req.session.currentUser._id}
-      })
-    })
-});
-//put to treat show page from edit
+
+//put to treat show page from edit treat
 router.put("/:id", (req, res)=>{
   Treats.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=> {
      res.redirect("/treats/" + req.params.id);
