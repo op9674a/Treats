@@ -21,9 +21,7 @@ router.get("/seedTreats", (req, res) =>{
 //new page inputs
 //redirect to main
 router.get("/new", (req, res)=>{
-  res.render("treats/new.ejs");
-  res.redirect("/treats");
-  currentUser: req.session.currentUser
+  res.render("new.ejs");
 })
 
 //post created from new to main
@@ -50,7 +48,7 @@ router.get("/", (req, res) => {
 //show treat req.params.id
 router.get("/:id", (req, res) => {
   Treats.findById(req.params.id, (err, showTreat) => {
-      res.render("treats/show.ejs", {
+      res.render("show.ejs", {
         treats: showTreat,
         currentUser: req.session.currentUser
       })
@@ -60,7 +58,7 @@ router.get("/:id", (req, res) => {
 //edit treat show page
 router.get("/:id/edit", (req, res) => {
   Treats.findById(req.params.id, (err, editTreat)=>{
-    res.render("treats/edit.ejs", {
+    res.render("edit.ejs", {
       treats: editTreat,
       currentUser: req.session.currentUser
     });
@@ -90,6 +88,8 @@ router.get("/:treatid/locations/:locationid", (req, res) => {
   })
   })
 });
+
+router.post("/:treatid/locations/:locationid")
 
 
 //put to treat show page from edit treat

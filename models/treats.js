@@ -14,7 +14,8 @@ image: String,
 name: String,
 description: String,
 places:[String],
-locations: [locationSchema]
+map: String,
+locations: [locationSchema],
 })
 
 const Treats = mongoose.model("Treats", treatSchema);

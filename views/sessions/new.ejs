@@ -3,13 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <%include ../../partials/head.ejs%>
     </head>
     <body>
+
+      <div class="container">
+        <h1>SnackMap</h1>
+        <h3>Where are the snacks you want?</h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Treats</a></li>
+          </ol>
+        </nav>
         <h1>Sign In</h1>
         <form action="/sessions" method="POST">
             <input type="text" name="username" placeholder="username"/>
-            <input type="password" name="password"/>
-            <input type="submit" value="Log In"/>
+            <input type="password" name="password" placeholder="password"/>
+            <input id = "login" type="submit" value="Log In"/>
         </form>
+      
+      </div>
     </body>
 </html>

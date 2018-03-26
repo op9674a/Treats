@@ -3,51 +3,59 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/main.css">
+      <%include ../../partials/head.ejs%>
   </head>
   <body>
-    <h1>Snack Map</h1>
-    <h3>App Description</h3>
+
+    <div class="container">
+      <h1>SnackMap</h1>
+      <h3>Where are the snacks you want?</h3>
 
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
         <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Treats</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Snacks</a></li>
         <li class="breadcrumb-item active" aria-current="page"><a href="/treats/<%=treats.id%>">Back to Other Locations</a></li>
       </ol>
     </nav>
-    <nav>
 
-      <!-- logout -->
-      <% if(currentUser) { %>
-           <form action="/treats/<%=treats.id%>/locations/<%=locations.id%>?_method=DELETE" method="POST">
-             <input type="submit" name="" value="Logout">
-           </form>
-         <% } %>
-    </nav>
 
     <h1>You can get <%=treats.name%> here!</h1>
 
-    <%=locations.name%>
-    <img src="<%=locations.image%>" alt="">
-    <%=locations.description%>
+    <p><%=locations.name%></p>
+    <div class="row">
+      <div class="col">
+        <img src="<%=locations.image%>" alt="">
+      </div>
+      <div class="col">
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" id ="map" src="" width="640" height="480"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <p><%=locations.description%></p>
 
 <% if(currentUser) { %>
   <h1>Tried it? What did you think?</h1>
   <form action="/treats/<%=treats.id%>/locations/<%=locations.id%>" method="POST">
     <textarea name="message" placeholder="TYPE YOUR MESSAGE HERE..."></textarea>
-        <input type="submit" value="POST">
+        <input id="messagepost" type="submit" value="POST">
       </form>
          <%} else {%>
-           Register to let everyone know what you think!
+           <p><a href="/users/new">Register to let everyone know what you think!</a> </p>
          <% } %>
 
+         <!-- logout -->
+         <% if(currentUser) { %>
+              <form action="sessions?_method=DELETE" method="POST">
+                <input id = "logout" type="submit" name="" value="Logout">
+              </form>
+            <% } %>
 
-
-    <iframe id ="map" src="" width="640" height="480"></iframe>
-
+</div>
+  <% include ../../partials/footer.ejs %>
   </body>
   <script>
   let map = <%- JSON.stringify(locations.map)%>

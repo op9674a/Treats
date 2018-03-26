@@ -13,9 +13,9 @@ router.post("/", (req, res)=>{
     }, (err, foundUser)=>{
         if(bcrypt.compareSync(req.body.password, foundUser.password) ){
             req.session.currentUser = foundUser;
-            res.redirect('/treats');
+            res.redirect("/treats");
         } else {
-            res.send('wrong password');
+            res.send("Ahh typo, please try again!");
         }
     });
 });

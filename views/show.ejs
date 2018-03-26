@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <%include ../partials/head.ejs%>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>SnackMap</h1>
+      <h3>Where are the snacks you want?</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Snacks</a></li>
+        </ol>
+      </nav>
+
+    <!-- logout -->
+
+
+
+      <h2><%=treats.name%></h2>
+      <p>Description: <%=treats.description%></p>
+
+      <div class="row">
+        <div class="col">
+          <img class="img-fluid" alt="Responsive image" src="<%=treats.image; %>"><br>
+          <h3>Places:</h3>
+            <ul>
+              <% for (let i=0; i< treats.places.length; i++){ %>
+                <li>
+                  <p><a href="<%=treats.places[i]%>"><%=treats.places[i]%></a></p></li>
+              <% } %>
+            </ul>
+        </div>
+
+        <div class="col">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" id ="map" src="" width="640" height="480"></iframe>
+          </div>
+            <h3>View more about:</h3>
+            <ul>
+            <%for (let i=0; i< treats.locations.length; i++){%>
+                <li>
+                  <p><a href="/treats/<%=treats.id%>/locations/<%=treats.locations[i].id;%>"><%=treats.locations[i].name%></a></p></li>
+            <%}%>
+            </ul>
+          </div>
+        </div>
+        <% if(currentUser) { %>
+          <a href="/treats/<%=treats.id%>/edit">Edit this Snack</a>
+            <form action ="/treats/<%=treats.id; %>?_method=DELETE" method="POST">
+              <input id="delete" type="submit" value="Delete this Snack">
+            </form>
+          <a href="/treats/new">Add a new Snack</a>
+        <% } %>
+
+        <!-- logout -->
+        <% if(currentUser) { %>
+             <form action="sessions?_method=DELETE" method="POST">
+               <input id = "logout" type="submit" name="" value="Logout">
+             </form>
+           <% } %>
+      </div>
+
+
+
+
+
+    <% include ../partials/footer.ejs %>
+  </body>
+  <script>
+  let map = <%- JSON.stringify(treats.map)%>
+  let id = document.getElementById("map")
+  id.src = map
+  </script>
+</html>

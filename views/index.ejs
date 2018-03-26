@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/main.css">
+        <%include ../partials/head.ejs%>
   </head>
   <body>
+    <div class="container">
 
     <!-- App Name -->
-    <h1>App Name TBD</h1>
-    <h3>App Description</h3>
+    <h1>SnackMap</h1>
+    <h3>Where are the snacks you want?</h3>
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -18,16 +18,6 @@
     <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
   </ol>
 </nav>
-    <nav>
-  
-      <!-- logout -->
-      <% if(currentUser) { %>
-           <form action="sessions?_method=DELETE" method="POST">
-             <input type="submit" name="" value="Logout">
-           </form>
-         <% } %>
-    </nav>
-
     <!-- customize to username -->
     <h1> <% if(currentUser) { %>
          Welcome <%=currentUser.username%>!
@@ -35,21 +25,30 @@
            Welcome!
          <% } %>
          </h1>
-    <h3>Here are some treats</h3>
+    <h3>Here are some snacks to try:</h3>
 
     <!-- treats for loop ul li with link to show pages-->
     <ul>
        <% for (let i=0; i< treats.length; i++){ %>
          <li>
-           <a href="/treats/<%=treats[i].id; %>"><%=treats[i].name%></a>
+           <p>
+           <a href="/treats/<%=treats[i].id; %>"><%=treats[i].name%></a></p>
          </li>
        <% } %>
      </ul>
     <!-- if user is me, edit, create, delete links -->
   <li>
-   <a href="/treats/new">Add a new Treat</a>
+   <a href="/treats/new">Add a New Snack</a>
  </li>
+ <!-- logout -->
+ <% if(currentUser) { %>
+      <form action="sessions?_method=DELETE" method="POST">
+        <input id = "logout" type="submit" name="" value="Logout">
+      </form>
+    <% } %>
 
-
+  </div>
+<% include ../partials/footer.ejs %>
   </body>
+
 </html>

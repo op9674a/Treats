@@ -1,33 +1,31 @@
 let seedTreats = [
-{
-  image:"https://m.media-amazon.com/images/S/aplus-media/vc/71e6586a-7d52-4735-bd0d-ed610b339eb8._SL300__.jpg",
-  name: "Shave Ice",
-  description:"NOT a snow cone.",
-  places: [
-    "https://www.tripadvisor.com/Restaurant_Review-g60982-d2264540-Reviews-Waiola_Shave_Ice-Honolulu_Oahu_Hawaii.html",
-    "http://matsumotoshaveice.com/",
-    "https://houseofpurealoha.com/"
-  ],
-  locations:[{
+  {
+    image:"https://s3-media2.fl.yelpcdn.com/bphoto/VKe8p8G-6NpUeSeIapWDrg/o.jpg",
+    name: "Shave Ice",
+    description:"NOT your average snow cone.",
+    places:[
+      "https://www.yelp.com/biz/waiola-shave-ice-honolulu",
+      "http://matsumotoshaveice.com/",
+      "https://houseofpurealoha.com/"
+      ],
+    map: "https://www.google.com/maps/d/embed?mid=1ER2CPf8YkTtbKD7mNfyt5gE2m1Iq5ETJ",
+    locations:[{
     image: "https://media-cdn.tripadvisor.com/media/photo-s/02/d8/b5/fe/waiola-shave-ice-and.jpg",
     name:"Waiola Shave Ice",
-    description:"To straighten things up, they serve “shave ice” or shaved ice.  These are not “snow cones” with crunchy pebbles of ice, swimming in some neon artificial liquid.  These are cones of ice as fine as cotton, artfully shaven off a block, and then syruped with a choice of tropical flavors. After eating shave ice, snow cones are guaranteed to have no appeal.",
-    map:"https://www.google.com/maps/d/embed?mid=1ER2CPf8YkTtbKD7mNfyt5gE2m1Iq5ETJ",
-
+    description:"These are not “snow cones” with crunchy pebbles of ice, swimming in some neon artificial liquid.  These are cones of ice as fine as cotton, artfully shaven off a block, and then syruped with a choice of tropical flavors. After eating shave ice, snow cones are guaranteed to have no appeal. - https://migrationology.com/waiola-shave-ice-hawaii/",
+    map:"https://www.google.com/maps/d/embed?mid=1CZNkVOlodS1gNwfZYLVGTrGHlYVXu754",
   },
     {
       image: "https://www.hawaiimagazine.com/sites/default/files/field/image/Matsumotos2%20copy.jpg",
       name:"Matsumoto's Shave Ice",
       description:"Established: February 13, 1951",
       map:"https://www.google.com/maps/d/embed?mid=1DioLTjoeTAXRsBN1ouxNvix2I8Hx7hpq"
-
-    },
+},
     {
       image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg1T_VfFti9l82symX0Is6oA65rHOg3vjrnnZI5toD7iw5_GNFJg",
       name: "Uncle Clay's House of Pure Aloha",
       description:"ALL NATURAL, HOMEMADE, REAL--A TASTE OF PURE ALOHA IN A BOWL.",
-      map:"https://www.google.com/maps/d/embed?mid=1DioLTjoeTAXRsBN1ouxNvix2I8Hx7hpq"
-
+      map:"https://www.google.com/maps/d/embed?mid=1eIrly0dXR8z_ySN8qNhFHjkn8k2iKydI"
     }],
   },
 {
@@ -39,6 +37,7 @@ let seedTreats = [
     "http://hawaiimusubi.com/",
     "http://tonsuke.com/eomusubiya.html"
   ],
+  map:"https://www.google.com/maps/d/embed?mid=1WUx8Z-j3pxqGmcXUZ7O4nOE8sjylpsWA",
   locations:[{
     image: "https://7elevenhawaii.com/wp-content/uploads/2016/04/logo_block_email.png",
     name:"7-Eleven Hawaii",
@@ -54,7 +53,7 @@ let seedTreats = [
     {
       image:"http://www.tonsuke.com/jvw02.jpg",
       name: "Tonsuke Corporation Iyasume Cafe",
-      description:"Iyasume was opened in Waikiki at September 2000.",
+      description:"Iyasume was opened in Waikiki in September 2000.",
       map:"https://www.google.com/maps/d/embed?mid=1AN29GGfyZShgTvvyY9oQps8O8dT18eZ7"
     }]
 },
@@ -68,12 +67,12 @@ let seedTreats = [
     "http://tamurasfinewine.com/",
     "http://www.dahawaiianpokecompany.com/"
   ],
+  map: "https://www.google.com/maps/d/embed?mid=10ZCy-HCnYsrYixY-2xHfVCdMmJwfmi_e",
   locations:[{
     image: "http://www.dinersdriveinsdiveslocations.com/fresh-catch-hawaii.jpg",
     name:"Fresh Catch",
-    description:"Fresh catch Hawaii best and freshest seafood in the world we catch and kill from the mountain to the sea",
-    map:"https://www.google.com/maps/d/u/0/embed?mid=1gmNmk7U0x7IyIbehSTY7OKjYwzFKOqNm"
-
+    description:"Hawaii's best and freshest seafood in the world.",
+    map:"https://www.google.com/maps/d/embed?mid=1gmNmk7U0x7IyIbehSTY7OKjYwzFKOqNm"
   },
     {
       image: "https://pbs.twimg.com/profile_images/378800000837835403/727404fbb0018fc8889959d17f813671_400x400.jpeg",

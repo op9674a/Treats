@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <%include ../partials/head.ejs%>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SnackMap</h1>
+      <h3>Where are the snacks you want?</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Snacks</a></li>
+        </ol>
+      </nav>
+    <form action="/treats/<%=treats.id%>?_method=PUT" method="POST">
+      <div class="form-group">
+        Name: <input type="text" class="form-control" name="name" placeholder="name" value="<%=treats.name%>">
+        Image: <input type="text" class="form-control" name="image" placeholder="image url" value="<%=treats.image%>">
+        Description: <input type="text" class="form-control" name="description" placeholder="description" value="<%=treats.description%>">
+        Places: <input type="text" class="form-control" name="places" placeholder="place url"value="<%=treats.places%>">
+        Map:
+        <input class="form-control" type="text" name="map" value="<%=treats.map%>" placeholder="must be Google API embed url"><br>
+        <input id="submit" type="submit" class="form-control" name="" value="Submit Snack Edits">
+      </div>
+    </form>
+
+    <% if(currentUser) { %>
+       <form action="sessions?_method=DELETE" method="POST">
+         <input id = "logout" type="submit" name="" value="Logout">
+       </form>
+     <% } %>
+
+  </div>
+  </body>
+  <script>
+  let map = <%- JSON.stringify(treats.map)%>
+  let id = document.getElementById("map")
+  id.src = map
+  </script>
+</html>

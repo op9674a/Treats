@@ -1,3 +1,130 @@
+body{
+  margin-top: 1em;
+  text-align: center;
+  background-image: url(snacks.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.container{
+  margin-top: 2em;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 25px;
+  padding-bottom: 50px;
+  text-align: center;
+  width: 90%;
+}
+.col{
+  width: 42%;
+}
+
+img{
+  max-width: 500px;
+  min-width: 500px;
+  max-height:300px;
+  min-height: 300px;
+  border-radius: 25px;
+  border: 5px solid black;
+}
+
+#map{
+  max-width: 500px;
+  min-width: 500px;
+  max-height:300px;
+  min-height: 300px;
+  border-radius: 25px;
+  border: 5px solid black;
+}
+
+h1, h2, h3, ul, ol, li, a, p, form{
+  font-family: 'Itim', cursive;
+  color: white;
+  list-style-type: none;
+}
+
+input{
+  color: black;
+  text-align: center;
+}
+
+h1{
+  font-size: 50px;
+}
+
+h2{
+  font-size: 45px;
+}
+
 h3{
-  border: 1px solid red;
+  margin-top: 1em;
+}
+
+p{
+  font-size: 30px;
+}
+
+ul{
+  text-indent: -30px;
+}
+
+.breadcrumb >.active a{
+   color: black;
+   text-decoration: none;
+}
+
+footer, footer>a{
+  font-family: 'Itim', cursive;
+  color: red;
+  font-weight: bolder;
+}
+
+#logout{
+  border-style: hidden;
+  background-color: rgb(28, 178, 239);
+  border-radius: 25px;
+  color: white;
+}
+
+#login{
+  border-style: hidden;
+  background-color: rgb(28, 178, 239);
+  border-radius: 25px;
+  color: white;
+}
+
+#submit{
+  border-style: hidden;
+  background-color: rgb(239, 169, 28);
+  border-radius: 25px;
+  color: white;
+}
+
+#newsnack{
+  border-style: hidden;
+  background-color: rgb(197, 122, 241);
+  border-radius: 25px;
+  color: white;
+}
+
+#delete{
+  border-style: hidden;
+  background-color: rgb(227, 60, 57);
+  border-radius: 25px;
+  color: white;
+}
+
+#createuser{
+  border-style: hidden;
+  background-color: rgb(244, 164, 231);
+  border-radius: 25px;
+  color: white;
+}
+
+#messagepost{
+  border-style: hidden;
+  background-color: rgb(8, 156, 18);
+  border-radius: 25px;
+  color: white;
 }

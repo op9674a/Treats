@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <%include ../partials/head.ejs%>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>SnackMap</h1>
+      <h3>Where are the snacks you want?</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page"><a href="/users/new">Register</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="/sessions/new">Log In</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="/treats">Back to Snacks</a></li>
+        </ol>
+      </nav>
+      <h1>Add a New Snack!</h1>
+      <div class="form-group">
+      <form action="/treats" method="POST">
+        Name:
+        <input class="form-control" type="text" name="name" placeholder="name">
+        Image:
+        <input class="form-control" type="text" name="image" placeholder ="image url">
+        Description:
+        <input class="form-control" type="text" name="description" placeholder="description">
+        Places:
+        <input class="form-control" type="text" name="Places" placeholder="Place url">
+        Map:
+        <input class="form-control" type="text" name="map" placeholder="must be Google API embed url"><br>
+        <input id="newsnack" type="submit" value="Add New Snack">
+      </form>
+
+    </div>
+  </body>
+
+</html>
