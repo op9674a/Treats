@@ -49,7 +49,7 @@
 
          <!-- logout -->
          <% if(currentUser) { %>
-              <form action="sessions?_method=DELETE" method="POST">
+              <form action="/sessions?_method=DELETE" method="POST">
                 <input id = "logout" type="submit" name="" value="Logout">
               </form>
             <% } %>
