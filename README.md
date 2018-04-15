@@ -1,6 +1,7 @@
 # SnackMap
 SnackMap was made using HTML, CSS, JavaScript, Bootstrap, and GoogleMaps API.
-https://safe-woodland-83862.herokuapp.com/
+
+https://safe-woodland-83862.herokuapp.com/treats
 
 # MVP
 User should be able to see a list of snacks on the opening page. User should be able to register with a username and password and then log in. Registered users have the ability to add, edit, and delete snacks.
